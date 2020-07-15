@@ -1,0 +1,25 @@
+ul.navigation {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(65, 153, 225);
+  height: 10vh;
+}
+
+ul.navigation li a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 5px 20px;
+  transition: 0.2s;
+}
+ul.navigation li a.active {
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  border: 2px solid white;
+}

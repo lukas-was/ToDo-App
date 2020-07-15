@@ -1,0 +1,28 @@
+div.taskslist {
+  min-height: 90vh;
+  padding: 20px 10vw;
+}
+div.taskslist div {
+  width: 80vw;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+div.taskslist div h3,
+div.taskslist div p {
+  padding: 10px;
+}
+div.taskslist div h3,
+div.taskslist div p:nth-of-type(1) {
+  border-bottom: 1px solid #bbb;
+}
+h3 {
+  display: flex;
+  justify-content: space-between;
+}
+.btnpanel button {
+  border: 1px solid #bbb;
+  padding: 2px 5px;
+  margin-left: 5px;
+}
