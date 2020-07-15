@@ -22,16 +22,24 @@ class AddTask extends Component {
       });
     }
   };
+
+  handleSubmit = (e) => {
+    const { title, text, deadline, deadlineDate } = this.state;
+    this.props.add(title, text, deadline, deadlineDate, e);
+
+    this.setState({
+      title: "",
+      text: "",
+      deadline: false,
+      deadlineDate: new Date().toISOString().slice(0, 10),
+    });
+  };
   render() {
     const { title, text, deadline, deadlineDate } = this.state;
 
     return (
       <div className="taskform">
-        <form
-          onSubmit={(e) =>
-            this.props.add(title, text, deadline, deadlineDate, e)
-          }
-        >
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">Tytuł zadania</label>
           <input
             onChange={this.handleChange}
