@@ -12,9 +12,9 @@ class AddTask extends Component {
   handleChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
-    if (name === "deadline") {
+    if (e.target.type === "checkbox") {
       this.setState({
-        deadline: !this.state.deadline,
+        [name]: !this.state[name],
       });
     } else {
       this.setState({
@@ -39,7 +39,7 @@ class AddTask extends Component {
 
     return (
       <div className="taskform">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} noValidate>
           <label htmlFor="title">Tytuł zadania</label>
           <input
             onChange={this.handleChange}
@@ -48,7 +48,6 @@ class AddTask extends Component {
             type="text"
             id="title"
           />
-
           <label htmlFor="text">Opis zadania</label>
           <textarea
             onChange={this.handleChange}
@@ -74,8 +73,13 @@ class AddTask extends Component {
               id="deadlineDate"
             />
           )}
-
-          <button>Dodaj zadanie</button>
+          {title && text ? (
+            <button>Dodaj zadanie</button>
+          ) : (
+            <button style={{ backgroundColor: "#bbb" }} disabled>
+              Dodaj zadanie
+            </button>
+          )}
         </form>
       </div>
     );
