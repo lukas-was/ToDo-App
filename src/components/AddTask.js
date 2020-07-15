@@ -6,7 +6,7 @@ class AddTask extends Component {
     title: "",
     text: "",
     deadline: false,
-    deadlineDate: "",
+    deadlineDate: new Date().toISOString().slice(0, 10),
   };
 
   handleChange = (e) => {
@@ -24,6 +24,7 @@ class AddTask extends Component {
   };
   render() {
     const { title, text, deadline, deadlineDate } = this.state;
+
     return (
       <div className="taskform">
         <form>
