@@ -16,6 +16,8 @@ class App extends React.Component {
         text: "Umyj Kangura",
         date: "2020-07-20",
         active: false,
+        deadline: false,
+        deadlineDate: "",
       },
       {
         id: 1,
@@ -23,6 +25,8 @@ class App extends React.Component {
         text: "Umyj Fabię",
         date: "2020-08-10",
         active: true,
+        deadline: false,
+        deadlineDate: "",
       },
       {
         id: 2,
@@ -30,6 +34,8 @@ class App extends React.Component {
         text: "Przeczytaj książkę",
         date: "2020-12-28",
         active: true,
+        deadline: false,
+        deadlineDate: "",
       },
     ],
   };

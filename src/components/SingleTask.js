@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingleTask = (props) => {
-  const { id, title, text, date, active, deadlineDate } = props.task;
+  const { id, title, text, date, active, deadline, deadlineDate } = props.task;
   return (
     <div>
       <h3>
@@ -16,7 +16,8 @@ const SingleTask = (props) => {
         <strong>{text}</strong>
       </p>
       <p>utworzono: {new Date(date).toLocaleString()}</p>
-      <p>pozostało czasu: {deadlineDate}</p>
+      {deadline}
+      {deadline && <p>termin: {deadlineDate}</p>}
     </div>
   );
 };
