@@ -2,7 +2,16 @@ import React from "react";
 import TimeLeftCounter from "./TimeLeftCounter";
 
 const SingleTask = (props) => {
-  const { id, title, text, date, active, deadline, deadlineDate } = props.task;
+  const {
+    id,
+    title,
+    text,
+    date,
+    active,
+    deadline,
+    deadlineDate,
+    doneDate,
+  } = props.task;
 
   return (
     <div>
@@ -20,7 +29,8 @@ const SingleTask = (props) => {
       <p>dodano: {new Date(date).toLocaleString()}</p>
       {deadline}
       {deadline && <p>termin: {deadlineDate}</p>}
-      {deadline && <TimeLeftCounter deadlineDate={deadlineDate} />}
+      {deadline && active && <TimeLeftCounter deadlineDate={deadlineDate} />}
+      {!active && <p>wykonano: {new Date(doneDate).toLocaleString()}</p>}
     </div>
   );
 };

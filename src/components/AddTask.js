@@ -27,11 +27,15 @@ class AddTask extends Component {
 
     return (
       <div className="taskform">
-        <form>
+        <form
+          onSubmit={(e) =>
+            this.props.add(title, text, deadline, deadlineDate, e)
+          }
+        >
           <label htmlFor="title">Tytuł zadania</label>
           <input
             onChange={this.handleChange}
-            vlaue={this.state.title}
+            vlaue={title}
             name="title"
             type="text"
             id="title"
@@ -40,14 +44,14 @@ class AddTask extends Component {
           <label htmlFor="text">Opis zadania</label>
           <textarea
             onChange={this.handleChange}
-            vlaue={this.state.text}
+            vlaue={text}
             name="text"
             id="text"
           ></textarea>
 
           <input
             onChange={this.handleChange}
-            checked={this.state.deadline}
+            checked={deadline}
             type="checkbox"
             name="deadline"
             id="deadline"
@@ -55,7 +59,7 @@ class AddTask extends Component {
           <label htmlFor="deadline">Deadline</label>
           {deadline && (
             <input
-              value={this.state.deadlineDate}
+              value={deadlineDate}
               onChange={this.handleChange}
               type="date"
               name="deadlineDate"
@@ -63,17 +67,7 @@ class AddTask extends Component {
             />
           )}
 
-          <button
-            onClick={this.props.add.bind(
-              this,
-              title,
-              text,
-              deadline,
-              deadlineDate
-            )}
-          >
-            Dodaj zadanie
-          </button>
+          <button>Dodaj zadanie</button>
         </form>
       </div>
     );

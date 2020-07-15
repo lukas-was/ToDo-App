@@ -15,9 +15,10 @@ class App extends React.Component {
         title: "Auto",
         text: "Umyj Kangura",
         date: "2020-07-20",
-        active: false,
+        active: true,
         deadline: false,
         deadlineDate: "",
+        doneDate: "",
       },
       {
         id: 1,
@@ -27,6 +28,7 @@ class App extends React.Component {
         active: true,
         deadline: false,
         deadlineDate: "",
+        doneDate: "",
       },
       {
         id: 2,
@@ -36,6 +38,7 @@ class App extends React.Component {
         active: true,
         deadline: false,
         deadlineDate: "",
+        doneDate: "",
       },
     ],
   };
@@ -52,6 +55,7 @@ class App extends React.Component {
     tasks.forEach((task) => {
       if (task.id === id) {
         task.active = false;
+        task.doneDate = new Date().getTime();
       }
     });
     this.setState({ tasks });
@@ -68,6 +72,7 @@ class App extends React.Component {
       active: true,
       deadline,
       deadlineDate,
+      doneDate: "",
     };
 
     this.index++;
