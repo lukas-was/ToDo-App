@@ -18,9 +18,20 @@ const SingleTask = (props) => {
       <h3>
         {title}
         <span className="btnpanel">
-          <button onClick={() => props.delete(id)}>usuń</button>
-          {active && <button onClick={() => props.done(id)}>zrobione</button>}
-          {active && <button>edytuj</button>}
+          {active && (
+            <button title="zrobione" onClick={() => props.done(id)}>
+              <i className="far fa-check-square"></i>
+            </button>
+          )}
+          <button title="usuń" onClick={() => props.delete(id)}>
+            <i className="far fa-trash-alt"></i>
+          </button>
+
+          {active && (
+            <button title="edytuj">
+              <i className="far fa-edit"></i>
+            </button>
+          )}
         </span>
       </h3>
       <p>

@@ -1,28 +1,45 @@
 div.taskslist {
+  display: flex;
+  flex-direction: column;
   min-height: 90vh;
-  padding: 20px 10vw;
+  padding: 20px;
 }
 div.taskslist div {
-  width: 80vw;
   margin-bottom: 20px;
   padding: 10px;
-  border-radius: 10px;
-  background-color: #eee;
+  border-radius: 8px;
+  background-color: rgb(201, 233, 225);
 }
 div.taskslist div h3,
 div.taskslist div p {
-  padding: 10px;
+  padding: 5px;
 }
-div.taskslist div h3,
-div.taskslist div p:nth-of-type(1) {
-  border-bottom: 1px solid #bbb;
-}
+
 h3 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 .btnpanel button {
-  border: 1px solid #bbb;
-  padding: 2px 5px;
-  margin-left: 5px;
+  border-style: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-left: 15px;
+  font-size: 15px;
+  background-color: #008989;
+  color: white;
+}
+
+@media (orientation: landscape) {
+  div.taskslist {
+    padding: 20px 10vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+  }
+  div.taskslist div {
+    flex-basis: 45%;
+  }
 }

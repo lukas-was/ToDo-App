@@ -3,23 +3,46 @@ ul.navigation {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(65, 153, 225);
+  background-color: #009f9b;
   height: 10vh;
+  transition: 0.2s;
 }
 
 ul.navigation li a {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
+  font-size: 15px;
   border: 2px solid rgba(255, 255, 255, 0.85);
-  border-radius: 5px;
+  border-radius: 8px;
   color: rgba(255, 255, 255, 0.85);
-  padding: 5px 20px;
+  padding: 8px;
   transition: 0.2s;
 }
 ul.navigation li a.active {
-  font-weight: bold;
-  letter-spacing: 2px;
+  /* font-weight: bold; */
+  /* letter-spacing: 2px; */
+  background-color: #00b9b3;
   color: white;
   border: 2px solid white;
+}
+@media (orientation: landscape) {
+  ul.navigation {
+    justify-content: center;
+  }
+
+  ul.navigation li a {
+    margin-right: 30px;
+    font-size: 20px;
+    border-style: none;
+    border-radius: 8px;
+  }
+  ul.navigation li a.active {
+    background-color: #00b9b3;
+    color: white;
+    border-style: none;
+  }
+  ul.navigation li a:hover {
+    color: white;
+  }
 }
