@@ -42,7 +42,7 @@ label {
 }
 div.taskform button {
   display: block;
-  margin: 40px auto 20px;
+  margin: 10vh auto 20px;
   padding: 10px 20px;
   text-transform: uppercase;
   background-color: #00b9b3;
