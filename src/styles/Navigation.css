@@ -20,8 +20,6 @@ ul.navigation li a {
   transition: 0.2s;
 }
 ul.navigation li a.active {
-  /* font-weight: bold; */
-  /* letter-spacing: 2px; */
   background-color: #00b9b3;
   color: white;
   border: 2px solid white;
