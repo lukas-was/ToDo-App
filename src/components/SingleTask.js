@@ -1,6 +1,5 @@
 import React from "react";
 import TimeLeftCounter from "./TimeLeftCounter";
-import { Link } from "react-router-dom";
 
 const SingleTask = (props) => {
   const {
