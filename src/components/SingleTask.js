@@ -1,5 +1,6 @@
 import React from "react";
 import TimeLeftCounter from "./TimeLeftCounter";
+import { Link } from "react-router-dom";
 
 const SingleTask = (props) => {
   const {
@@ -26,12 +27,6 @@ const SingleTask = (props) => {
           <button title="usuń" onClick={() => props.delete(id)}>
             <i className="far fa-trash-alt"></i>
           </button>
-
-          {active && (
-            <button title="edytuj">
-              <i className="far fa-edit"></i>
-            </button>
-          )}
         </span>
       </h3>
       <p>
