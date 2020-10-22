@@ -17,7 +17,6 @@ ul.navigation li a {
   text-transform: uppercase;
   text-align: center;
   line-height: 10vh;
-  /* font-size: 15px; */
   color: rgba(255, 255, 255, 0.85);
   height: 100%;
   transition: letter-spacing 0.2s;
@@ -36,9 +35,11 @@ ul.navigation li a.active {
   /* border-bottom: 4px solid orange; */
 }
 @media (orientation: landscape) {
+  ul.navigation {
+    font-size: 30px;
+  }
   ul.navigation li a {
     border-bottom: 3px solid black;
-    font-size: 20px;
   }
   ul.navigation li a.active {
     border-bottom: 3px solid orange;
