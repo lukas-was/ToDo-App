@@ -15,7 +15,7 @@ const SingleTask = (props) => {
 
   return (
     <div>
-      <h3>
+      <h3 className="title">
         {title}
         <span className="btnpanel">
           {active && (
@@ -28,9 +28,7 @@ const SingleTask = (props) => {
           </button>
         </span>
       </h3>
-      <p>
-        <strong>{text}</strong>
-      </p>
+      <p className="text">{text}</p>
       <p>dodano: {new Date(date).toLocaleString()}</p>
       {deadline}
       {deadline && <p>termin: {deadlineDate}</p>}

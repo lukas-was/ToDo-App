@@ -6,13 +6,13 @@ const Navigation = () => {
   return (
     <ul className="navigation">
       <li>
-        <NavLink to="/tasks">Do zrobienia</NavLink>
+        <NavLink to="/tasks">to do</NavLink>
       </li>
       <li>
-        <NavLink to="/done">Zrobione</NavLink>
+        <NavLink to="/done">done</NavLink>
       </li>
       <li>
-        <NavLink to="/add">Dodaj zadanie</NavLink>
+        <NavLink to="/add">Add+</NavLink>
       </li>
     </ul>
   );

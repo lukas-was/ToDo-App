@@ -1,46 +1,50 @@
 ul.navigation {
-  list-style-type: none;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #009f9b;
-  height: 10vh;
-  transition: 0.2s;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: black;
+  font-size: 20px;
+}
+ul.navigation li {
+  flex-grow: 1;
 }
 
 ul.navigation li a {
   display: block;
+  transform: skew(20deg);
+  font-family: "Grandstander", cursive;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 13px;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-  border-radius: 8px;
+  text-align: center;
+  line-height: 10vh;
+  /* font-size: 15px; */
   color: rgba(255, 255, 255, 0.85);
-  padding: 8px;
-  transition: 0.2s;
+  height: 100%;
+  transition: letter-spacing 0.2s;
+}
+
+ul.navigation li:first-child a.active {
+  box-shadow: -10px 0 0 10px orange;
+}
+ul.navigation li:last-child a.active {
+  box-shadow: 10px 0 0 10px orange;
 }
 ul.navigation li a.active {
-  background-color: #00b9b3;
+  letter-spacing: 2px;
   color: white;
-  border: 2px solid white;
+  background-color: orange;
+  /* border-bottom: 4px solid orange; */
 }
 @media (orientation: landscape) {
-  ul.navigation {
-    justify-content: center;
-  }
-
   ul.navigation li a {
-    margin-right: 30px;
+    border-bottom: 3px solid black;
     font-size: 20px;
-    border-style: none;
-    border-radius: 8px;
   }
   ul.navigation li a.active {
-    background-color: #00b9b3;
-    color: white;
-    border-style: none;
+    border-bottom: 3px solid orange;
   }
   ul.navigation li a:hover {
     color: white;
+    border-bottom: 3px solid orange;
   }
 }

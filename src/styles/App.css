@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div.App {
+  position: relative;
+  background-color: rgb(31, 31, 31);
+  min-height: 100vh;
+  overflow: hidden;
+}

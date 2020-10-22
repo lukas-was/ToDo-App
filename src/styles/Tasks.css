@@ -1,34 +1,40 @@
 div.taskslist {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
-  padding: 20px;
+  min-height: 89vh;
+  padding: 3vw;
+  font-family: "Quicksand", sans-serif;
 }
 div.taskslist div {
-  margin-bottom: 20px;
+  margin-bottom: 3vw;
   padding: 10px;
-  border-radius: 8px;
-  background-color: rgb(201, 233, 225);
+  border-radius: 2px;
+  color: white;
+  background-color: rgb(70, 70, 70);
+  transition: 0.3s;
 }
 div.taskslist div h3,
 div.taskslist div p {
   padding: 5px;
 }
 
-h3 {
+h3.title {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .btnpanel button {
   border-style: none;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 12px 15px;
+  border-radius: 50%;
   margin-left: 15px;
-  font-size: 15px;
-  background-color: #008989;
+  font-size: 19px;
+  background-color: orange;
   color: white;
+  cursor: pointer;
 }
 
 @media (orientation: landscape) {
@@ -41,5 +47,13 @@ h3 {
   }
   div.taskslist div {
     flex-basis: 45%;
+    margin-bottom: 1vw;
+  }
+  div.taskslist div:hover {
+    transform: scale(1.04);
+    background-color: rgb(80, 80, 80);
+  }
+  .btnpanel button:hover {
+    background-color: rgb(252, 194, 35);
   }
 }
