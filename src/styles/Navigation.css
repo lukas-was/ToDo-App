@@ -13,6 +13,7 @@ ul.navigation li a {
   display: block;
   transform: skew(20deg);
   font-family: "Grandstander", cursive;
+  font-style: italic;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
@@ -32,7 +33,6 @@ ul.navigation li a.active {
   letter-spacing: 2px;
   color: white;
   background-color: orange;
-  /* border-bottom: 4px solid orange; */
 }
 @media (orientation: landscape) {
   ul.navigation {
