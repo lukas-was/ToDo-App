@@ -7,6 +7,7 @@ class AddTask extends Component {
     text: "",
     deadline: false,
     deadlineDate: new Date().toISOString().slice(0, 10),
+    isAdded: false,
   };
 
   handleChange = (e) => {
@@ -23,19 +24,25 @@ class AddTask extends Component {
     }
   };
 
+  toggleIsAdded = () => this.setState({ isAdded: false });
+
   handleSubmit = (e) => {
     const { title, text, deadline, deadlineDate } = this.state;
-    this.props.add(title, text, deadline, deadlineDate, e);
+    const isAdded = this.props.add(title, text, deadline, deadlineDate, e);
 
-    this.setState({
-      title: "",
-      text: "",
-      deadline: false,
-      deadlineDate: new Date().toISOString().slice(0, 10),
-    });
+    if (isAdded) {
+      this.setState({
+        title: "",
+        text: "",
+        deadline: false,
+        deadlineDate: new Date().toISOString().slice(0, 10),
+        isAdded: true,
+      });
+    }
+    setTimeout(this.toggleIsAdded, 600);
   };
   render() {
-    const { title, text, deadline, deadlineDate } = this.state;
+    const { title, text, deadline, deadlineDate, isAdded } = this.state;
 
     return (
       <div className="taskform">
@@ -80,6 +87,7 @@ class AddTask extends Component {
               Dodaj zadanie
             </button>
           )}
+          {isAdded && <p className="taskmessage">Dodano</p>}
         </form>
       </div>
     );

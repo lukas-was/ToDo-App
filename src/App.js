@@ -82,6 +82,7 @@ class App extends React.Component {
     this.setState({
       tasks,
     });
+    return true;
   };
   render() {
     return (
