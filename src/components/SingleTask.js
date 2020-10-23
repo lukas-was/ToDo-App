@@ -14,10 +14,10 @@ const SingleTask = (props) => {
   } = props.task;
 
   return (
-    <div>
-      <h3 className="title">
-        {title}
-        <span className="btnpanel">
+    <div className="task">
+      <div className="header">
+        <div id="title">{title}</div>
+        <div className="btnpanel">
           {active && (
             <button title="zrobione" onClick={() => props.done(id)}>
               <i className="far fa-check-square"></i>
@@ -26,8 +26,8 @@ const SingleTask = (props) => {
           <button title="usuń" onClick={() => props.delete(id)}>
             <i className="far fa-trash-alt"></i>
           </button>
-        </span>
-      </h3>
+        </div>
+      </div>
       <p className="text">{text}</p>
       <p>dodano: {new Date(date).toLocaleString()}</p>
       {deadline}

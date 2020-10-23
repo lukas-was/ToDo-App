@@ -54,6 +54,7 @@ class AddTask extends Component {
             name="title"
             type="text"
             id="title"
+            maxLength={25}
           />
           <label htmlFor="text">Opis zadania</label>
           <textarea
