@@ -25,10 +25,10 @@ class App extends React.Component {
         title: "Auto",
         text: "Umyj Fabię",
         date: "2020-08-10",
-        active: true,
+        active: false,
         deadline: false,
         deadlineDate: "",
-        doneDate: "",
+        doneDate: "2020-08-12",
       },
       {
         id: 2,
@@ -93,7 +93,7 @@ class App extends React.Component {
           </nav>
           <main>
             <Switch>
-              <Route path="/tasks">
+              <Route exact path="/">
                 <Tasks
                   tasks={this.state.tasks}
                   delete={this.deleteTask}

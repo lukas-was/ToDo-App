@@ -6,7 +6,9 @@ const Navigation = () => {
   return (
     <ul className="navigation">
       <li>
-        <NavLink to="/tasks">to do</NavLink>
+        <NavLink exact to="/">
+          to do
+        </NavLink>
       </li>
       <li>
         <NavLink to="/done">done</NavLink>
