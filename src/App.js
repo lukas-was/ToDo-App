@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Tasks from "./components/Tasks";
 import DoneTasks from "./components/DoneTasks";
 import AddTask from "./components/AddTask";
+import EditTask from "./components/EditTask";
 
 class App extends React.Component {
   index = 3;
@@ -60,7 +61,27 @@ class App extends React.Component {
     });
     this.setState({ tasks });
   };
+  editTask = (id, title, text, date, deadline, deadlineDate, e) => {
+    e.preventDefault();
 
+    const editedTask = {
+      id,
+      title,
+      text,
+      date,
+      active: true,
+      deadline,
+      deadlineDate,
+      doneDate: "",
+    };
+
+    let tasks = [...this.state.tasks];
+    tasks = tasks.filter((task) => task.id !== id);
+    tasks.push(editedTask);
+    this.setState({ tasks });
+
+    return true;
+  };
   addTask = (title, text, deadline, deadlineDate, e) => {
     e.preventDefault();
 
@@ -103,9 +124,19 @@ class App extends React.Component {
               <Route path="/done">
                 <DoneTasks tasks={this.state.tasks} delete={this.deleteTask} />
               </Route>
-              <Route path="/add">
+              <Route exact path="/add">
                 <AddTask add={this.addTask} />
               </Route>
+              <Route
+                path="/edit/:id"
+                render={({ match }) => (
+                  <EditTask
+                    match={match}
+                    tasks={this.state.tasks}
+                    edit={this.editTask}
+                  />
+                )}
+              />
             </Switch>
           </main>
         </div>

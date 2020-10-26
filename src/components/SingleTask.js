@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import TimeLeftCounter from "./TimeLeftCounter";
 
 const SingleTask = (props) => {
@@ -26,6 +27,11 @@ const SingleTask = (props) => {
           <button title="usuń" onClick={() => props.delete(id)}>
             <i className="far fa-trash-alt"></i>
           </button>
+          {active && (
+            <Link title="edytuj" to={`edit/${id}`}>
+              <i className="far fa-edit"></i>
+            </Link>
+          )}
         </div>
       </div>
       <p className="text">{text}</p>

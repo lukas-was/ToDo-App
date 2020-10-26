@@ -50,7 +50,7 @@ class AddTask extends Component {
           <label htmlFor="title">Tytuł zadania</label>
           <input
             onChange={this.handleChange}
-            vlaue={title}
+            value={title}
             name="title"
             type="text"
             id="title"
@@ -59,7 +59,7 @@ class AddTask extends Component {
           <label htmlFor="text">Opis zadania</label>
           <textarea
             onChange={this.handleChange}
-            vlaue={text}
+            value={text}
             name="text"
             id="text"
           ></textarea>

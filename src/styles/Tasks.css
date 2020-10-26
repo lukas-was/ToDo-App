@@ -28,20 +28,29 @@ div.header div#title {
   text-overflow: ellipsis;
   overflow: hidden;
   letter-spacing: 1px;
+  font-size: 16px;
 }
 div.header div.btnpanel {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+}
+div.btnpanel button,
+div.btnpanel a {
+  margin-left: 8px;
+  font-size: 20px;
+  border-radius: 50%;
+  color: white;
+  background-color: orange;
+  cursor: pointer;
 }
 div.btnpanel button {
   border-style: none;
-  padding: 12px 15px;
-  border-radius: 50%;
-  margin-left: 10px;
-  font-size: 20px;
-  background-color: orange;
-  color: white;
-  cursor: pointer;
+  padding: 10px 13px;
+}
+div.btnpanel a {
+  display: block;
+  padding: 9px 11px;
 }
 p {
   padding: 5px;
@@ -66,7 +75,8 @@ p.text {
     transform: scale(1.04);
     background-color: rgb(88, 88, 88);
   }
-  .btnpanel button:hover {
+  .btnpanel button:hover,
+  div.btnpanel a:hover {
     background-color: rgb(252, 194, 35);
   }
 }
