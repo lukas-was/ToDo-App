@@ -1,14 +1,24 @@
 import React, { Component } from "react";
 import "../styles/AddTask.css";
 
-class AddTask extends Component {
-  state = {
-    title: "",
-    text: "",
-    deadline: false,
-    deadlineDate: new Date().toISOString().slice(0, 10),
-    isAdded: false,
-  };
+class EditTask extends Component {
+  state = this.getEditTask();
+
+  getEditTask() {
+    const idEditTask = parseInt(this.props.match.params.id);
+    const tasks = [...this.props.tasks];
+    const editTask = tasks.filter((task) => task.id === idEditTask);
+
+    return {
+      id: idEditTask,
+      title: editTask[0].title,
+      text: editTask[0].text,
+      date: editTask[0].date,
+      deadline: editTask[0].deadline,
+      deadlineDate: editTask[0].deadlineDate,
+      isEdited: false,
+    };
+  }
 
   handleChange = (e) => {
     const value = e.target.value;
@@ -24,32 +34,38 @@ class AddTask extends Component {
     }
   };
 
-  toggleIsAdded = () => this.setState({ isAdded: false });
+  toggleIsEdited = () => this.setState({ isEdited: false });
 
   handleSubmit = (e) => {
-    const { title, text, deadline, deadlineDate } = this.state;
-    const isAdded = this.props.add(title, text, deadline, deadlineDate, e);
+    const { id, title, text, date, deadline, deadlineDate } = this.state;
+    const editCorrect = this.props.edit(
+      id,
+      title,
+      text,
+      date,
+      deadline,
+      deadlineDate,
+      e
+    );
 
-    if (isAdded) {
+    if (editCorrect) {
       this.setState({
         title: "",
         text: "",
         deadline: false,
         deadlineDate: new Date().toISOString().slice(0, 10),
-        isAdded: true,
+        isEdited: true,
       });
     }
-    setTimeout(this.toggleIsAdded, 600);
+    setTimeout(this.toggleIsEdited, 600);
   };
   render() {
-    const { title, text, deadline, deadlineDate, isAdded } = this.state;
+    const { title, text, deadline, deadlineDate, isEdited } = this.state;
 
     return (
-      <div className="taskform">
+      <div className="taskform" style={{ backgroundColor: "rgb(70, 70, 70)" }}>
         <form onSubmit={this.handleSubmit} noValidate>
-          <label htmlFor="title">
-            Tytuł zadania <span>({25 - title.length} znaków)</span>
-          </label>
+          <label htmlFor="title">Tytuł zadania</label>
           <input
             onChange={this.handleChange}
             value={title}
@@ -58,6 +74,7 @@ class AddTask extends Component {
             id="title"
             maxLength={25}
           />
+
           <label htmlFor="text">Opis zadania</label>
           <textarea
             onChange={this.handleChange}
@@ -84,17 +101,17 @@ class AddTask extends Component {
             />
           )}
           {title && text ? (
-            <button>Dodaj zadanie</button>
+            <button>Zapisz</button>
           ) : (
             <button style={{ backgroundColor: "#bbb" }} disabled>
-              Dodaj zadanie
+              Zapisz
             </button>
           )}
-          {isAdded && <p className="taskmessage">Dodano</p>}
+          {isEdited && <p className="taskmessage">Zapisano</p>}
         </form>
       </div>
     );
   }
 }
 
-export default AddTask;
+export default EditTask;
