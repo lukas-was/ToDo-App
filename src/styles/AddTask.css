@@ -21,7 +21,16 @@ label span {
   margin: 10px 0;
   border-radius: 2px;
   font-family: "Quicksand", sans-serif;
-  background-color: rgb(247, 247, 247);
+  background-color: #ccc;
+  color: rgb(43, 43, 43);
+  outline: none;
+}
+
+#title:focus,
+#text:focus,
+#deadlineDate:focus {
+  background-color: rgb(255, 226, 173);
+  box-shadow: 0 0 15px gray;
 }
 #title {
   width: 100%;
@@ -48,17 +57,46 @@ label span {
   border-style: none;
 }
 div.taskform button {
+  position: relative;
   display: block;
   margin: 10vh auto 20px;
   padding: 15px 20px;
   border-style: none;
+  outline: none;
   border-radius: 2px;
-  background-color: orange;
   color: white;
   cursor: pointer;
   font-family: "Grandstander", cursive;
   font-size: 15px;
   text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.2s;
+}
+div.taskform button.on {
+  background-color: orange;
+}
+div.taskform button.off {
+  background-color: #ccc;
+}
+div.taskform button.on::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -110%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: skew(20deg);
+  z-index: 0;
+  animation: effect 1.2s 1s 2 ease-in-out;
+}
+@keyframes effect {
+  40% {
+    left: 110%;
+  }
+  100% {
+    left: 110%;
+  }
 }
 
 p.taskmessage {
@@ -94,5 +132,9 @@ p.taskmessage {
   p.taskmessage {
     left: 30%;
     width: 40%;
+  }
+  div.taskform button.on:hover {
+    background-color: rgb(255, 184, 52);
+    box-shadow: 0 0 15px gray;
   }
 }

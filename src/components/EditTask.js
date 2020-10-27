@@ -101,9 +101,9 @@ class EditTask extends Component {
             />
           )}
           {title && text ? (
-            <button>Zapisz</button>
+            <button className="on">Zapisz</button>
           ) : (
-            <button style={{ backgroundColor: "#bbb" }} disabled>
+            <button className="off" disabled>
               Zapisz
             </button>
           )}

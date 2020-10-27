@@ -24,6 +24,7 @@ div.header div#title {
   margin: 0;
   padding: 5px;
   background-color: transparent;
+  color: white;
   text-transform: uppercase;
   text-overflow: ellipsis;
   overflow: hidden;

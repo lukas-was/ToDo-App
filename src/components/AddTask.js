@@ -57,6 +57,7 @@ class AddTask extends Component {
             type="text"
             id="title"
             maxLength={25}
+            autocomplete="off"
           />
           <label htmlFor="text">Opis zadania</label>
           <textarea
@@ -64,6 +65,7 @@ class AddTask extends Component {
             value={text}
             name="text"
             id="text"
+            autocomplete="off"
           ></textarea>
 
           <input
@@ -84,9 +86,9 @@ class AddTask extends Component {
             />
           )}
           {title && text ? (
-            <button>Dodaj zadanie</button>
+            <button className="on">Dodaj zadanie</button>
           ) : (
-            <button style={{ backgroundColor: "#bbb" }} disabled>
+            <button className="off" disabled>
               Dodaj zadanie
             </button>
           )}
