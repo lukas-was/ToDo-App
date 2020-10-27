@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ToDo-App/static/css/main.0677a2d7.chunk.css",
-    "main.js": "/ToDo-App/static/js/main.6d901199.chunk.js",
-    "main.js.map": "/ToDo-App/static/js/main.6d901199.chunk.js.map",
+    "main.css": "/ToDo-App/static/css/main.acc5e7f5.chunk.css",
+    "main.js": "/ToDo-App/static/js/main.cba26af6.chunk.js",
+    "main.js.map": "/ToDo-App/static/js/main.cba26af6.chunk.js.map",
     "runtime-main.js": "/ToDo-App/static/js/runtime-main.7216bf10.js",
     "runtime-main.js.map": "/ToDo-App/static/js/runtime-main.7216bf10.js.map",
     "static/js/2.69a0f58f.chunk.js": "/ToDo-App/static/js/2.69a0f58f.chunk.js",
     "static/js/2.69a0f58f.chunk.js.map": "/ToDo-App/static/js/2.69a0f58f.chunk.js.map",
     "index.html": "/ToDo-App/index.html",
-    "precache-manifest.4bd2efd7af2fdc795c44ac8e04134ae0.js": "/ToDo-App/precache-manifest.4bd2efd7af2fdc795c44ac8e04134ae0.js",
+    "precache-manifest.14bb8e7d5c54120857f2ae12713b8b8c.js": "/ToDo-App/precache-manifest.14bb8e7d5c54120857f2ae12713b8b8c.js",
     "service-worker.js": "/ToDo-App/service-worker.js",
-    "static/css/main.0677a2d7.chunk.css.map": "/ToDo-App/static/css/main.0677a2d7.chunk.css.map",
+    "static/css/main.acc5e7f5.chunk.css.map": "/ToDo-App/static/css/main.acc5e7f5.chunk.css.map",
     "static/js/2.69a0f58f.chunk.js.LICENSE.txt": "/ToDo-App/static/js/2.69a0f58f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7216bf10.js",
     "static/js/2.69a0f58f.chunk.js",
-    "static/css/main.0677a2d7.chunk.css",
-    "static/js/main.6d901199.chunk.js"
+    "static/css/main.acc5e7f5.chunk.css",
+    "static/js/main.cba26af6.chunk.js"
   ]
 }
